@@ -1,15 +1,20 @@
 # ♻️ EcoSortAI
 
-EcoSortAI is an AI-powered waste classification and sustainability recommendation system built using Computer Vision and Machine Learning.
+EcoSortAI is an AI-powered waste classification and sustainability recommendation system built using Computer Vision and Machine Learning. It classifies waste into different categories and promotes sustainable practices through Reduce, Reuse, and Recycle recommendations.
+
+---
 
 ## Features
 
 - Waste image classification
 - HOG feature extraction
 - Support Vector Machine (SVM)
+- Confidence score prediction
 - Environmental impact awareness
 - Reduce, Reuse and Recycle recommendations
 - Interactive Streamlit dashboard
+
+---
 
 ## Tech Stack
 
@@ -21,69 +26,123 @@ EcoSortAI is an AI-powered waste classification and sustainability recommendatio
 - NumPy
 - Pillow
 - Matplotlib
+- Joblib
+
+---
 
 ## Dataset
 
 - TrashNet Dataset
+- Classes:
+  - Cardboard
+  - Glass
+  - Metal
+  - Paper
+  - Plastic
+  - Trash
+
+---
 
 ## Project Structure
 
-EcoSortAI/
+```
+EcoSortAI
 │
 ├── app.py
 ├── requirements.txt
 ├── README.md
+├── data/
 ├── model/
-│   └── waste_classifier.pkl
+│     └── waste_classifier.joblib
 ├── notebooks/
-│   ├── dataset_exploration.ipynb
-│   └── svm_model.ipynb
-└── screenshots/
+├── screenshots/
+└── venv/
+```
 
-## Future Scope
+---
 
-- Deep Learning-based classification
-- Real-time camera detection
-- More waste categories
-- Mobile application support
+## Model
 
-## 📸 Screenshots
+The trained Support Vector Machine (SVM) model is included in this repository.
 
-### 🏠 Home Page
+### Model Details
+
+- Feature Extraction: Histogram of Oriented Gradients (HOG)
+- Classifier: Support Vector Machine (SVM)
+- Kernel: RBF
+- Image Size: 128 × 128
+- Accuracy: ~65%
+- Model Format: Joblib (compressed)
+
+**Model File:**
+
+```
+model/waste_classifier.joblib
+```
+
+---
+
+## Screenshots
+
+### Home Page
 
 Main dashboard of EcoSortAI with sidebar information and upload section.
 
-![Home Page](screenshots/home_page.png)
+![Home Page](screenshots/home_page1.png)
+![Home Page](screenshots/home_page2.png)
 
-### 📤 Image Upload
+### Image Upload
 
 Uploading a waste image for classification.
 
 ![Image Upload](screenshots/image_upload.png)
 
-### 🔍 Prediction Result
+### Prediction Result
 
 Predicted waste category along with confidence score.
 
 ![Prediction Result](screenshots/prediction_result.png)
 
-### ♻️ Sustainability Recommendations
+### Sustainability Recommendations
 
-#### 🗑️ Disposal
+#### Disposal
+
 ![Disposal](screenshots/disposal.png)
 
-#### 🌱 Reduce
+#### Reduce
+
 ![Reduce](screenshots/reduce.png)
 
-#### 🔄 Reuse
+#### Reuse
+
 ![Reuse](screenshots/reuse.png)
 
-#### ♻️ Recycle
+#### Recycle
+
 ![Recycle](screenshots/recycle.png)
 
-## Model
+---
 
-The trained SVM model is not included because it exceeds GitHub's file size limit.
+## Live Demo
 
-Run the notebook `notebooks/svm_model.ipynb` to retrain the model and generate:
-model/waste_classifier.pkl
+[EcoSortAI Streamlit App](https://ecosortaikp.streamlit.app/)
+
+---
+
+## Future Scope
+
+- Improve accuracy using Deep Learning models
+- Real-time camera detection
+- Support for additional waste categories
+- Mobile application development
+- Smart waste management integration
+
+---
+
+## Author
+
+**Krishnapooja P Pai**
+
+B.Tech CSE (AI & ML)
+
+---
