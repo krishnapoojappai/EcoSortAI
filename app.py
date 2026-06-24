@@ -1,5 +1,5 @@
 import streamlit as st
-import pickle
+import joblib
 import cv2
 import numpy as np
 from PIL import Image
@@ -55,9 +55,9 @@ button[data-baseweb="tab"] {
 """, unsafe_allow_html=True)
 
 
-with open("model/waste_classifier.pkl", "rb") as f:
-    model = pickle.load(f)
-
+model = joblib.load(
+    "model/waste_classifier.joblib"
+)
 
 with st.sidebar:
 
